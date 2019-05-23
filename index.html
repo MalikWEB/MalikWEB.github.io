@@ -1,23 +1,45 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hi mark</title>
+    <style>
+        button.right{
+            display: flex;
+        }
+        button.left{
+            display: flex;
+        }
+        p.mid{
+            display: flex
+        }
+        .flex{
+            display: flex;
+            justify-content: center;
+        }
+        .flex > div {
+            width: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 75px;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex">
+        <div>
+            <button class="right" id="right">➡️</button>
+        </div>
+        <div>
+                <button class="left" id="left">⬅️</button></div>
+        <div>   
+            <p class="mid" id="mid"></p>
+        </div>
+    </div>
+    <script src="main.js"></script>
 
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+</body>
+</html>
